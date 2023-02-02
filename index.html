@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BooknoteWorthy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./dist/output.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body class="w-full">
+    <main class="w-full">
+        <!-- Nav bar -->
+
+        <nav
+            class="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+            <div class="container flex flex-wrap items-center justify-between mx-auto">
+                <a href="https://oliwang.github.io/BooknoteWorthy/" class="flex items-center">
+                    <img src="./img/logo2.png" class="h-6 mr-3 sm:h-9" alt="BooknoteWorthy Logo">
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">BooknoteWorthy</span>
+                </a>
+                <a class="github-button" href="https://github.com/oliwang/BooknoteWorthy" data-icon="octicon-star" data-size="large" aria-label="Star oliwang/BooknoteWorthy on GitHub">Star</a>
+                
+            </div>
+        </nav>
+
+
+        <!-- Intro Hero message -->
+        <section class="w-screen h-screen p-4" id="intro_section">
+            <div class="container mx-auto h-full flex flex-col justify-center items-center">
+                <h1 class="text-4xl font-bold text-center">BooknoteWorthy</h1>
+                <p class="text-center">Export Apple Books Annotations with Style</p>
+                <br>
+        
+                <button type="button"
+                    class="text-white bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600">
+                    <a href="#step1" class="hover:text-white">Get started</a></button>
+            </div>
+        </section>
+        <!-- Step1 Upload Files -->
+        <section class="w-screen h-screen p-4 bg-stone-200" id="step1">
+            <div class="container mx-auto h-full flex flex-col items-center justify-center">
+                <div class="section_title w-full mb-8">
+                    <h1 class="text-4xl font-bold text-center">Step 1: Upload Database Files</h1>
+                    <p class="text-center">Upload your Apple Books Database Files<button
+                            data-popover-target="popover-description" data-popover-placement="bottom-end"
+                            type="button"><svg class="w-4 h-4 ml-2 text-gray-400 hover:text-gray-500" aria-hidden="true"
+                                fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd"></path>
+                            </svg><span class="sr-only">Show information</span></button></p>
+                </div>
+                <div data-popover id="popover-description" role="tooltip"
+                    class="absolute z-10 invisible inline-block text-sm font-light text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+                    <div class="p-3 space-y-2">
+                        <h3 class="font-semibold text-gray-900 dark:text-white">Location</h3>
+                        <p class="">.sqlite files in <span
+                                class="filepath">/Users/&lt;UserName&gt;/Library/Containers/com.apple.iBooksX/Data/Documents/BKLibrary</span>
+                            and <span
+                                class="filepath mb-8">/Users/&lt;UserName&gt;/Library/Containers/com.apple.iBooksX/Data/Documents/AEAnnotation</span>
+                        </p>
+                        <h3 class="font-semibold text-gray-900 dark:text-white">Hidden Library Folder</h3>
+                        <p>On Macs you might need to <a target="_blank"
+                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                href="https://macreports.com/how-to-find-and-unhide-the-library-folder-on-mac/#:~:text=Unhide%20(and%20hide)%20Library">Unhide
+                                the Library Folder</a> before uploading.</p>
+                        <h3 class="font-semibold text-gray-900 dark:text-white">Create Aliases</h3>
+                        <p>You can <a target="_blank"
+                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                href="https://support.apple.com/en-hk/guide/mac-help/mchlp1046/mac">create aliases</a>
+                            of these two database files for easier uploading in the future.</p>
+                        <h3 class="font-semibold text-gray-900 dark:text-white">Privacy</h3>
+                        <p>Nothing is uploaded to the server.</p>
+                    </div>
+                    <div data-popper-arrow></div>
+                </div>
+
+                <div class="section_content w-full">
+
+                    <form class="flex flex-col justify-between w-full mx-auto">
+
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_bk">Upload
+                            <span class="filepath">BKLibrary-&lt;version&gt;.sqlite</span> file</label>
+                        <input
+                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            id="file_bk" type="file" accept=".sqlite">
+                        <br>
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_ae">Upload
+                            <span class="filepath">AEAnnotation_&lt;version&gt;.sqlite</span> file</label>
+                        <input
+                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            id="file_ae" type="file" accept=".sqlite">
+                    </form>
+
+                </div>
+
+
+            </div>
+
+        </section>
+        <!-- Step2 Set Template -->
+        <section class="w-screen min-h-screen md:h-screen p-4" id="step2">
+            <div class="container mx-auto h-full flex flex-col justify-center items-center">
+                <div class="section_title w-full mb-8">
+                    <h1 class="text-4xl font-bold text-center">Step 2: Set Template</h1>
+                    <p class="text-center">Set the template for your exported notes</p>
+                </div>
+                <div class="section_content w-full">
+                    <div class="flex flex-col md:flex-row w-full items-center">
+                        <div class="w-full md:w-2/5 md:text-md flex flex-col text-sm md:m-0 m-4">
+                            <p class="text-left">Use the following variables in your template:</p>
+                            <br>
+                            <p class="text-left"><span class="template_btn">{{book.title}}</span> - Title
+                                of
+                                the book</p>
+                            <p class="text-left"><span class="template_btn">{{book.author}}</span> -
+                                Author
+                                of the book</p>
+                            <br>
+                            <p class="text-left"><span class="template_btn">{{#each annotations}}{{/each}}</span> - Loop
+                                through annotations</p>
+                            <p class="text-left"><span class="template_btn">{{assetid}}</span> - The
+                                book's
+                                assetid</p>
+                            <p class="text-left"><span class="template_btn">{{annotation_location}}</span> -
+                                The location in the book</p>
+                            <p class="text-left"><span class="template_btn">{{selected_text}}</span> -
+                                Highlight</p>
+                            <p class="text-left"><span class="template_btn">{{note}}</span> - Note you
+                                took
+                            </p>
+                            <p class="text-left"><span class="template_btn">{{ibook_link}}</span> - deeplink to selected
+                                text</p>
+                            <br>
+
+                            <div class="inline-flex rounded-md">
+                                <button id="template_example1" data-example="1"
+                                    class="template_example px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-l border-gray-200 rounded-l-md hover:bg-gray-100 hover:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600">
+                                    Example 1
+                                </button>
+                               
+                                <button id="template_example2" data-example="2"
+                                    class="template_example px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600">
+                                    Example 2
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <form class="w-full flex flex-col justify-between md:w-3/5">
+                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                for="template">Template</label>
+                            <textarea
+                                class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 h-[400px]"
+                                aria-describedby="template_textarea" id="template_str" type="file"
+                                style="resize: none;"></textarea>
+                        </form>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </section>
+        <!-- Step3 Choose Book and Quote -->
+        <section class="w-screen min-h-screen p-4 bg-stone-200 pt-40" id="step3">
+            <div class="container mx-auto h-full flex flex-col justify-center items-center">
+                <div class="section_title w-full mb-8">
+                    <h1 class="text-4xl font-bold text-center">Step 3: Choose Book & Export Annotation</h1>
+                    <p class="text-center">Select which annotations to export</p>
+                </div>
+
+                <div class="section_content w-full">
+                    <label for="book_select" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select
+                        a book</label>
+                    <select id="book_select"
+                        class="mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option selected>No book found. Please check your BKLibrary file in Step 1.</option>
+                    </select>
+
+                    <div id="quote_table" class="relative overflow-x-auto sm:rounded-lg w-full mb-8 hidden">
+                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                            <thead
+                                class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 w-full">
+                                <tr class="w-full">
+                                    <th scope="col" class="p-4 w-3">
+                                        <div class="flex items-center">
+                                            <input id="selectall_checkbox" type="checkbox"
+                                                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                            <label for="selectall_checkbox" class="sr-only">checkbox</label>
+                                        </div>
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 w-2/3 text-center">
+                                        Highlighted Text
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 text-center">
+                                        Note
+                                    </th>
+                                    <th scope="col" class="px-6 py-3 w-3 text-center">
+                                        Link
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="result_content" class="w-full">
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+        </section>
+
+        <footer
+            class="p-4 bg-white rounded-lg shadow flex items-center justify-between md:p-6 dark:bg-gray-800">
+            <p class="m-auto">Created by <a class="text-blue-700" href="https://twitter.com/OliviaWang_JY" target="_blank">@OliviaWang</a> under <a class="text-blue-700" href="https://opensource.org/licenses/GPL-3.0" target="_blank">GPL-3.0</a></p>
+            
+        </footer>
+
+
+
+        <div id="toast_warning"
+            class="invisible fixed bottom-5 left-5 flex items-center w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+            role="alert">
+            <div
+                class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-orange-500 bg-orange-100 rounded-lg dark:bg-orange-700 dark:text-orange-200">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="sr-only">Warning icon</span>
+            </div>
+            <div class="ml-3 text-sm font-normal">Please select at least one annotation.</div>
+        </div>
+
+        <div id="toast_success"
+            class="invisible fixed bottom-5 left-5 flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+            role="alert">
+            <div
+                class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="sr-only">Check icon</span>
+            </div>
+            <div class="ml-3 text-sm font-normal">Copied to Clipboard.</div>
+        </div>
+
+        <button id="export_btn" type="button"
+            class="invisible fixed bottom-5 right-5 flex items-center justify-center text-white bg-blue-700 rounded-full w-14 h-14 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700">
+            <!-- <svg aria-hidden="true" class="w-8 h-8 transition-transform group-hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg> -->
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6">
+                </path>
+            </svg>
+            <span class="sr-only">Open actions menu</span>
+        </button>
+
+
+
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <!-- <script src="https://unpkg.com/underscore@1.13.6/underscore-umd-min.js"></script> -->
+    <script src="epub-cfi.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

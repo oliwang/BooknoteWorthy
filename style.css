@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+ html {
+    scroll-behavior:smooth
+}
+
+ .filepath {
+    padding: 0.1rem 0.1rem;
+    font-size: 0.8rem;
+    color: #495057;
+    background-color: rgb(226, 225, 225);
+    /* background-clip: padding-box; */
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    overflow-wrap: anywhere;
+ }
+
+ td {
+    word-break: break-all;
+ }
+
+ .template_btn {
+    padding: 0.1rem 0.1rem;
+    font-size: 0.8rem;
+    color: #495057;
+    background-color: rgb(226, 225, 225);
+    /* background-clip: padding-box; */
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    overflow-wrap: anywhere;
+    
+ }
+
+
+
