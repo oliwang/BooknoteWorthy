@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img height="200" src="img/logo2.png">
+  <img height="100" src="img/logo2.png">
 </p>
 
 # BooknoteWorthy
